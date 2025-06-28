@@ -9,7 +9,8 @@ COPY nginx-conf/*.conf /etc/nginx/nginx.conf
 COPY index-html-files/*.html /usr/share/nginx/html/
 
 # Fix: install CA certs before any HTTPS call
-#RUN apk update && apk add --no-cache ca-certificates bash
+RUN apk add --no-cache curl
+
 
 # Expose multiple ports
 EXPOSE 8081 8082 8083
