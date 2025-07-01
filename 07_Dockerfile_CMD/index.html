@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Docker CMD Explanation</title>
+</head>
+<body>
+    <h1>Docker CMD Instruction</h1>
+    <p>
+        The <code>CMD</code> instruction in a Dockerfile specifies the default command to run when a container starts.
+        It is used to provide defaults for an executing container.
+    </p>
+
+    <h2>Example:</h2>
+    <pre><code>CMD ["python", "app.py"]</code></pre>
+    <p>
+        This means that when the container runs, it will execute <code>python app.py</code> unless a different command is provided at runtime.
+    </p>
+
+    <h2>Another Common Example:</h2>
+    <pre><code>CMD ["nginx", "-g", "daemon off;"]</code></pre>
+    <p>
+        This tells Nginx to run in the foreground (not as a background daemon), which is required to keep the Docker container running.
+    </p>
+</body>
+</html>
