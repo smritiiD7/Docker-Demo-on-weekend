@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Docker Ports Overview</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0073e6;
+    }
+
+    h2 {
+      color: #444;
+      margin-top: 30px;
+    }
+
+    .code-block {
+      background: #e8f0fe;
+      padding: 10px 15px;
+      font-family: monospace;
+      border-left: 4px solid #0073e6;
+      margin: 10px 0;
+      white-space: pre-line;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Understanding Docker Ports</h1>
+
+    <h2>🔹 Mapping Specific Ports with <code>-p</code></h2>
+    <ul>
+      <li>Use <code>-p host_port:container_port</code> to map ports manually.</li>
+      <li>Access the container directly via the host's specified port.</li>
+    </ul>
+    <div class="code-block">
+      docker run -p 8080:80 nginx
+    </div>
+    <p>This maps <strong>host port 8080</strong> to <strong>container port 80</strong>.</p>
+
+    <h2>🔸 Publishing All Ports with <code>-P</code></h2>
+    <ul>
+      <li>Use <code>-P</code> to automatically assign random host ports to exposed container ports.</li>
+      <li>Check assigned ports using <code>docker ps</code>.</li>
+    </ul>
+    <div class="code-block">
+      docker run -P my-multiproject-container
+    </div>
+
+    <footer>
+      🐳 Docker Simplified | Made with ❤️
+    </footer>
+  </div>
+</body>
+</html>
